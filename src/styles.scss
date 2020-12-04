@@ -1,4 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Open Sans', sans-serif; }
+
+/* Overrides to fullcalendar default CSS for demo purposes */
+.fc {
+	background-color: #ffffff;
+	margin: 1rem auto;
+	max-width: 1100px;
+	padding: 1rem;
+
+	.fc-button-primary {
+		background: none !important;
+		border: none !important;
+		border-radius: 0 !important;
+		color: #33475b !important;
+		text-transform: capitalize !important;
+
+		&:focus,
+		&:hover {
+			box-shadow: none !important;
+			outline: none !important;
+		}
+	}
+
+	.fc-dayGridMonth-button,
+	.fc-timeGridWeek-button,
+	.fc-timeGridDay-button {
+		border: none !important;
+		border-bottom: 2px solid #cccccc !important;
+	}
+
+	.fc-button-active {
+		border: none !important;
+		border-bottom: 2px solid #087682 !important;
+		color: #087682 !important;
+	}
+
+	.fc-daygrid-day.fc-day-today,
+	.fc-timegrid-col.fc-day-today {
+		background: none !important;
+	}
+
+	.fc-prev-button,
+	.fc-next-button {
+		color: #087682 !important;
+	}
+
+	.fc-timegrid-event-harness-inset .fc-timegrid-event {
+		box-shadow: none;
+	}
+
+	.fc-timegrid-slot-minor {
+		border-top-style: none !important;
+	}
+
+	/* Custom CSS for event types */
+	.cor,
+	.cos,
+	.euco,
+	.external,
+	.gro {
+		border: 0;
+		border-radius: 0;
+		padding: 5px;
+
+		div {
+			color: #33475b;
+
+			&.fc-daygrid-event-dot {
+				display: none;
+			}
+		}
+	}
+
+	.cor {
+		background-color: #eeffce;
+		border-left: 4px solid #cbe896; 
+	}
+
+	.cos {
+		background-color: #e7f5ff;
+		border-left: 4px solid #c0e3fd;
+	}
+
+	.euco {
+		background-color: #fbf2ee;
+		border-left: 4px solid #e7ad99;
+	}
+
+	.external {
+		background-color: #ffffff;
+		border: 1px solid #cccccc;
+	}
+
+	.gro {
+		background-color: #ebf0cc;
+		border-left: 4px solid #c2c89f;
+	}
+}

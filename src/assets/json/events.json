@@ -1,0 +1,237 @@
+[
+  {
+    "id": "00",
+    "title": "AGRIFISH - Agriculture & Fisheries",
+    "start": "2020-12-02",
+    "classNames": [
+      "cos"
+    ],
+    "extendedProps": {
+      "type": "COS"
+    }
+  },
+  {
+    "id": "01",
+    "title": "JHA - Justice & HomeAffairs",
+    "start": "2020-12-07",
+    "classNames": [
+      "cos"
+    ],
+    "extendedProps": {
+      "type": "COS"
+    }
+  },
+  {
+    "id": "02",
+    "title": "FAC - Foreign Affairs",
+    "start": "2020-12-14",
+    "classNames": [
+      "cos"
+    ],
+    "extendedProps": {
+      "type": "COS"
+    }
+  },
+  {
+    "id": "03",
+    "title": "Coreper 1",
+    "start": "2020-12-02T09:00:00",
+    "end": "2020-12-02T13:00:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "04",
+    "title": "Coreper 1",
+    "start": "2020-12-04T09:00:00",
+    "end": "2020-12-04T13:00:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "05",
+    "title": "Coreper 1",
+    "start": "2020-12-09T09:00:00",
+    "end": "2020-12-09T13:00:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "06",
+    "title": "Coreper 1",
+    "start": "2020-12-16T09:00:00",
+    "end": "2020-12-16T13:00:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "07",
+    "title": "Coreper 1",
+    "start": "2020-12-18T09:00:00",
+    "end": "2020-12-18T13:00:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "08",
+    "title": "Coreper 2",
+    "start": "2020-12-02T09:30:00",
+    "end": "2020-12-02T13:30:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "09",
+    "title": "Coreper 2",
+    "start": "2020-12-04T09:30:00",
+    "end": "2020-12-04T13:30:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "10",
+    "title": "Coreper 2",
+    "start": "2020-12-09T09:30:00",
+    "end": "2020-12-09T13:30:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "11",
+    "title": "Coreper 2",
+    "start": "2020-12-16T09:30:00",
+    "end": "2020-12-16T13:30:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "12",
+    "title": "Coreper 2",
+    "start": "2020-12-18T09:30:00",
+    "end": "2020-12-18T13:30:00",
+    "classNames": [
+      "cor"
+    ],
+    "extendedProps": {
+      "type": "COR"
+    }
+  },
+  {
+    "id": "13",
+    "title": "Political and Security Committee",
+    "start": "2020-12-03T14:00:00",
+    "end": "2020-12-03T18:00:00",
+    "classNames": [
+      "gro"
+    ],
+    "extendedProps": {
+      "type": "GRO"
+    }
+  },
+  {
+    "id": "14",
+    "title": "Political and Security Committee",
+    "start": "2020-12-15T14:00:00",
+    "end": "2020-12-15T18:00:00",
+    "classNames": [
+      "gro"
+    ],
+    "extendedProps": {
+      "type": "GRO"
+    }
+  },
+  {
+    "id": "15",
+    "title": "Financial Services Committee",
+    "start": "2020-12-08T09:00:00",
+    "end": "2020-12-09T113:00:00",
+    "classNames": [
+      "gro"
+    ],
+    "extendedProps": {
+      "type": "GRO"
+    }
+  },
+  {
+    "id": "16",
+    "title": "European Council",
+    "start": "2020-12-10",
+    "end": "2020-12-12",
+    "classNames": [
+      "euco"
+    ],
+    "extendedProps": {
+      "type": "EUCO"
+    }
+  },
+  {
+    "id": "17",
+    "title": "European Council",
+    "start": "2020-12-21",
+    "end": "2020-12-23",
+    "classNames": [
+      "euco"
+    ],
+    "extendedProps": {
+      "type": "EUCO"
+    }
+  },
+  {
+    "id": "18",
+    "title": "Eurogroup",
+    "start": "2020-12-02",
+    "classNames": [
+      "external"
+    ],
+    "extendedProps": {
+      "type": "EXTERNAL"
+    }
+  },
+  {
+    "id": "19",
+    "title": "EP Plenary (Strasbourg)",
+    "start": "2020-12-17",
+    "classNames": [
+      "external"
+    ],
+    "extendedProps": {
+      "type": "EXTERNAL"
+    }
+  }
+]
