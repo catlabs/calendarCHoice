@@ -16,10 +16,11 @@ export class FullCalendarComponent implements OnInit {
   }
 
   calendarOptions: CalendarOptions = {
+    schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     headerToolbar: {
       left: 'prev,next', /* prev,next today */
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay' /* dayGridMonth,timeGridWeek,timeGridDay,listWeek */
+      right: 'dayGridMonth,timeGridWeek,timeGridDay' /* dayGridMonth,timeGridWeek,timeGridDay,listWeek,resourceTimeline,resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth */
     },
     slotLabelFormat: [{
       hour: '2-digit',
