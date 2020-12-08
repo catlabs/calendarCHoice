@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
+import { EventDetailsDialogComponent } from './event-details-dialog/event-details-dialog.component';
 
 @Component({
-  selector: 'app-full-calendar',
-  templateUrl: './full-calendar.component.html',
-  styleUrls: ['./full-calendar.component.scss']
+  selector: 'app-calendar',
+  templateUrl: './calendar.component.html',
+  styleUrls: ['./calendar.component.scss']
 })
-export class FullCalendarComponent implements OnInit {
+export class CalendarComponent implements OnInit {
   currentEvents: EventApi[] = [];
   eventGuid = 0;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +22,7 @@ export class FullCalendarComponent implements OnInit {
     headerToolbar: {
       left: 'prev,next', /* prev,next today */
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay' /* dayGridMonth,timeGridWeek,timeGridDay,listWeek,resourceTimeline,resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth */
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek' /* dayGridMonth,timeGridWeek,timeGridDay,listWeek,resourceTimeline,resourceTimelineDay,resourceTimelineWeek,resourceTimelineMonth */
     },
     slotLabelFormat: [{
       hour: '2-digit',
@@ -28,7 +30,7 @@ export class FullCalendarComponent implements OnInit {
       hour12: false /* sets 24h format */
     }],
     slotMinTime: '08:00:00', /* sets slot timeframe for week and day views */
-    slotMaxTime: '23:00:00', /* sets slot timeframe for week and day views */ 
+    slotMaxTime: '23:00:00', /* sets slot timeframe for week and day views */
     eventTimeFormat: {
       hour: '2-digit',
       minute: '2-digit',
@@ -45,7 +47,7 @@ export class FullCalendarComponent implements OnInit {
     dayMaxEvents: true, /* adds more events tooltip */
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
-    eventsSet: this.handleEvents.bind(this)
+    eventsSet: this.handleEvents.bind(this),
   };
 
   handleDateSelect(selectInfo: DateSelectArg) {
@@ -55,10 +57,10 @@ export class FullCalendarComponent implements OnInit {
 
     if (title) {
       calendarApi.addEvent({
-      	id: this.createEventId(),
-      	title,
-      	start: selectInfo.startStr,
-      	end: selectInfo.endStr,
+        id: this.createEventId(),
+        title,
+        start: selectInfo.startStr,
+        end: selectInfo.endStr,
         allDay: selectInfo.allDay,
         className: 'gro',
         extendedProps: {
@@ -69,9 +71,16 @@ export class FullCalendarComponent implements OnInit {
   }
 
   handleEventClick(clickInfo: EventClickArg) {
-    if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-      clickInfo.event.remove();
-    }
+    const dialogRef = this.dialog.open(EventDetailsDialogComponent, {
+      width: '500px',
+      data: clickInfo
+    });
+
+    dialogRef.afterClosed().subscribe((hasToDelete: boolean) => {
+      if(hasToDelete){
+        clickInfo.event.remove();
+      }
+    });
   }
 
   handleEvents(events: EventApi[]) {

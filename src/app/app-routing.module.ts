@@ -3,8 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'full-calendar',
-    loadChildren: () => import('./full-calendar/full-calendar.module').then(m => m.NgFullCalendarModule)
+    path: 'calendar',
+    loadChildren: () => import('./calendar/calendar.module').then(m => m.CalendarModule)
+  },
+  {
+    path: 'timeline',
+    loadChildren: () => import('./timeline/timeline.module').then(m => m.TimelineModule)
   }
 ];
 
