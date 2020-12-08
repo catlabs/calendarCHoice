@@ -1,0 +1,38 @@
+[
+  {
+    "id": "EBS1",
+    "title": "Room EB S1"
+  },
+  {
+    "id": "EBS2",
+    "title": "Room EB S2"
+  },
+  {
+    "id": "EBS5",
+    "title": "Room EB S5"
+  },
+  {
+    "id": "EBS7",
+    "title": "Room EB S7"
+  },
+  {
+    "id": "JL201",
+    "title": "Room JL 20.1"
+  },
+  {
+    "id": "JL202",
+    "title": "Room JL 20.2"
+  },
+  {
+    "id": "JL501",
+    "title": "Room JL 50.1"
+  },
+  {
+    "id": "JL502",
+    "title": "Room JL 50.2"
+  },
+  {
+    "id": "OTHER",
+    "title": "Room OTHER"
+  }
+]

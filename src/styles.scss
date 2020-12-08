@@ -10,6 +10,10 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
 	max-width: 1100px;
 	padding: 1rem;
 
+	.fc-list-event-dot {
+		display: none !important;
+	}
+
 	.fc-button-primary {
 		background: none !important;
 		border: none !important;
@@ -26,7 +30,11 @@ body { margin: 0; font-family: 'Open Sans', sans-serif; }
 
 	.fc-dayGridMonth-button,
 	.fc-timeGridWeek-button,
-	.fc-timeGridDay-button {
+	.fc-timeGridDay-button,
+	.fc-listWeek-button,
+	.fc-resourceTimelineDay-button,
+	.fc-resourceTimelineWeek-button,
+	.fc-resourceTimelineMonth-button {
 		border: none !important;
 		border-bottom: 2px solid #cccccc !important;
 	}

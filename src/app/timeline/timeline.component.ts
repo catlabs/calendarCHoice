@@ -10,24 +10,25 @@ export class TimelineComponent implements OnInit {
   calendarOptions: CalendarOptions = {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     initialView: 'resourceTimelineWeek',
-    resources: [
-      {
-        id: 'a',
-        title: 'Room A'
-      },
-      {
-        id: 'b',
-        title: 'Room B'
-      }
-    ],
-    events: [
-      {
-        id: '1',
-        resourceId: 'a',
-        title: 'Meeting',
-        start: '2020-12-14'
-      }
-    ]
+    headerToolbar: {
+      left: 'prev,next',
+      center: 'title',
+      right: 'resourceTimelineMonth,resourceTimelineWeek,resourceTimelineDay'
+    },
+    slotLabelFormat: [{
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    }],
+    slotMinTime: '08:00:00',
+    slotMaxTime: '23:00:00',
+    eventTimeFormat: {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    },
+    resources: '../assets/json/resources.json',
+    events: '../assets/json/events.json'
   };
 
   constructor() { }

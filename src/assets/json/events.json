@@ -1,6 +1,7 @@
 [
   {
     "id": "00",
+    "resourceId": "JL501",
     "title": "AGRIFISH - Agriculture & Fisheries",
     "start": "2020-12-02",
     "classNames": [
@@ -12,7 +13,8 @@
   },
   {
     "id": "01",
-    "title": "JHA - Justice & HomeAffairs",
+    "resourceId": "JL502",
+    "title": "JHA - Justice & Home Affairs",
     "start": "2020-12-07",
     "classNames": [
       "cos"
@@ -23,6 +25,7 @@
   },
   {
     "id": "02",
+    "resourceId": "JL501",
     "title": "FAC - Foreign Affairs",
     "start": "2020-12-14",
     "classNames": [
@@ -34,6 +37,7 @@
   },
   {
     "id": "03",
+    "resourceId": "EBS1",
     "title": "Coreper 1",
     "start": "2020-12-02T09:00:00",
     "end": "2020-12-02T13:00:00",
@@ -46,6 +50,7 @@
   },
   {
     "id": "04",
+    "resourceId": "EBS1",
     "title": "Coreper 1",
     "start": "2020-12-04T09:00:00",
     "end": "2020-12-04T13:00:00",
@@ -58,6 +63,7 @@
   },
   {
     "id": "05",
+    "resourceId": "EBS1",
     "title": "Coreper 1",
     "start": "2020-12-09T09:00:00",
     "end": "2020-12-09T13:00:00",
@@ -70,6 +76,7 @@
   },
   {
     "id": "06",
+    "resourceId": "EBS1",
     "title": "Coreper 1",
     "start": "2020-12-16T09:00:00",
     "end": "2020-12-16T13:00:00",
@@ -82,6 +89,7 @@
   },
   {
     "id": "07",
+    "resourceId": "EBS1",
     "title": "Coreper 1",
     "start": "2020-12-18T09:00:00",
     "end": "2020-12-18T13:00:00",
@@ -94,6 +102,7 @@
   },
   {
     "id": "08",
+    "resourceId": "JL502",
     "title": "Coreper 2",
     "start": "2020-12-02T09:30:00",
     "end": "2020-12-02T13:30:00",
@@ -106,6 +115,7 @@
   },
   {
     "id": "09",
+    "resourceId": "JL502",
     "title": "Coreper 2",
     "start": "2020-12-04T09:30:00",
     "end": "2020-12-04T13:30:00",
@@ -118,6 +128,7 @@
   },
   {
     "id": "10",
+    "resourceId": "JL502",
     "title": "Coreper 2",
     "start": "2020-12-09T09:30:00",
     "end": "2020-12-09T13:30:00",
@@ -130,6 +141,7 @@
   },
   {
     "id": "11",
+    "resourceId": "JL502",
     "title": "Coreper 2",
     "start": "2020-12-16T09:30:00",
     "end": "2020-12-16T13:30:00",
@@ -142,6 +154,7 @@
   },
   {
     "id": "12",
+    "resourceId": "JL502",
     "title": "Coreper 2",
     "start": "2020-12-18T09:30:00",
     "end": "2020-12-18T13:30:00",
@@ -154,6 +167,7 @@
   },
   {
     "id": "13",
+    "resourceId": "JL201",
     "title": "Political and Security Committee",
     "start": "2020-12-03T14:00:00",
     "end": "2020-12-03T18:00:00",
@@ -166,6 +180,7 @@
   },
   {
     "id": "14",
+    "resourceId": "JL201",
     "title": "Political and Security Committee",
     "start": "2020-12-15T14:00:00",
     "end": "2020-12-15T18:00:00",
@@ -178,6 +193,7 @@
   },
   {
     "id": "15",
+    "resourceId": "JL202",
     "title": "Financial Services Committee",
     "start": "2020-12-08T09:00:00",
     "end": "2020-12-09T113:00:00",
@@ -190,6 +206,7 @@
   },
   {
     "id": "16",
+    "resourceId": "EBS7",
     "title": "European Council",
     "start": "2020-12-10",
     "end": "2020-12-12",
@@ -202,6 +219,7 @@
   },
   {
     "id": "17",
+    "resourceId": "EBS7",
     "title": "European Council",
     "start": "2020-12-21",
     "end": "2020-12-23",
@@ -214,6 +232,7 @@
   },
   {
     "id": "18",
+    "resourceId": "OTHER",
     "title": "Eurogroup",
     "start": "2020-12-02",
     "classNames": [
@@ -225,6 +244,7 @@
   },
   {
     "id": "19",
+    "resourceId": "OTHER",
     "title": "EP Plenary (Strasbourg)",
     "start": "2020-12-17",
     "classNames": [
