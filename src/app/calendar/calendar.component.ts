@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
 import { EventDetailsDialogComponent } from './event-details-dialog/event-details-dialog.component';
@@ -6,15 +7,44 @@ import { EventDetailsDialogComponent } from './event-details-dialog/event-detail
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss']
+  styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent implements OnInit {
   currentEvents: EventApi[] = [];
+  communitiesOption = [
+    { name: 'COR', value: 'cor' },
+    { name: 'COS', value: 'cos' },
+    { name: 'GRO', value: 'gro' },
+    { name: 'EUCO', value: 'euco' },
+    { name: 'EXTERNAL', value: 'external' },
+  ];
   eventGuid = 0;
+  filtersForm: FormGroup;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private fb: FormBuilder
+  ) {
+
+    /* this.formBuilder.group({
+      acceptTerms: [false, Validators.requiredTrue]
+    }); */
+
+    this.filtersForm = this.fb.group({
+      communities: this.fb.group({
+        cor: [true],
+        cos: [true],
+        gro: [true],
+        euco: [true],
+        external: [true]
+      })
+    });
+  }
 
   ngOnInit(): void {
+    this.filtersForm.valueChanges.subscribe(values => {
+      console.log(values.communities);
+    });
   }
 
   calendarOptions: CalendarOptions = {
@@ -77,7 +107,7 @@ export class CalendarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((hasToDelete: boolean) => {
-      if(hasToDelete){
+      if (hasToDelete) {
         clickInfo.event.remove();
       }
     });

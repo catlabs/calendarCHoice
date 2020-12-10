@@ -1,1 +1,29 @@
-<full-calendar [options]="calendarOptions"></full-calendar>
+<div class="calendar-container">
+  <mat-drawer-container>
+    <mat-drawer #drawer mode="side" [opened]="true">
+      <div class="calendar-container__drawer">
+        <ng-container *ngIf="drawer.opened; else closed">
+          <button mat-flat-button (click)="drawer.toggle()">Hide Menu</button>
+          <form [formGroup]="filtersForm">
+            <label class="mat-h2">Communities list</label>
+            <ul formGroupName="communities">
+              <li *ngFor="let option of communitiesOption">
+                <mat-checkbox [formControlName]="option.value">
+                  {{ option.name }}
+                </mat-checkbox>
+              </li>
+            </ul>
+          </form>
+        </ng-container>
+        <ng-template #closed>
+          <button mat-icon-button (click)="drawer.toggle()" aria-label="">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+        </ng-template>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content [ngClass]="{'mat-drawer-content--closed': !drawer.opened}">
+      <full-calendar [options]="calendarOptions"></full-calendar>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

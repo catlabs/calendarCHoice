@@ -12,6 +12,10 @@ import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
 import { EventDetailsDialogComponent } from './event-details-dialog/event-details-dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -29,8 +33,13 @@ FullCalendarModule.registerPlugins([
     CommonModule,
     CalendarRoutingModule,
     FullCalendarModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatButtonModule,
-    MatDialogModule
+    MatCheckboxModule,
+    MatDialogModule,
+    MatIconModule,
+    MatSidenavModule
   ]
 })
 export class CalendarModule { }

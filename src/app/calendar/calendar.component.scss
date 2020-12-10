@@ -1,0 +1,29 @@
+.calendar-container {
+  padding: 2rem;
+  &__drawer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    button {
+        align-self: flex-end;
+        margin-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  }
+}
+
+// TODO: This need to be rethink
+// https://angular.io/guide/animations
+// https://stackoverflow.com/questions/48479524/how-to-impliment-a-sidenav-navigation-drawer-with-a-mini-variant
+.mat-drawer {
+  transform: translate3d(-10px, 0, 0);
+  visibility: visible !important;
+}
+.mat-drawer-content{
+    &--closed{
+        margin-left: 60px !important;
+    }
+}
