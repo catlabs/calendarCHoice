@@ -6,9 +6,10 @@
           <button mat-flat-button (click)="drawer.toggle()">Hide Menu</button>
           <form [formGroup]="filtersForm">
             <label class="mat-h2">Communities list</label>
-            <ul formGroupName="communities">
-              <li *ngFor="let option of communitiesOption">
-                <mat-checkbox [formControlName]="option.value">
+            <!-- <ul formGroupName="communities"> -->
+            <ul formArrayName="communities">
+              <li *ngFor="let option of service.communityOptions; let i=index">
+                <mat-checkbox [formControlName]="i">
                   {{ option.name }}
                 </mat-checkbox>
               </li>
@@ -23,7 +24,7 @@
       </div>
     </mat-drawer>
     <mat-drawer-content [ngClass]="{'mat-drawer-content--closed': !drawer.opened}">
-      <full-calendar [options]="calendarOptions"></full-calendar>
+      <full-calendar #calendar [options]="calendarOptions"></full-calendar>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>

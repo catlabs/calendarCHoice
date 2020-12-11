@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/angular';
+import { CalendarOptions, DateSelectArg, EventClickArg, EventApi, FullCalendarComponent } from '@fullcalendar/angular';
+import { CalendarService } from './calendar.service';
 import { EventDetailsDialogComponent } from './event-details-dialog/event-details-dialog.component';
+import { CalendarFilters } from './calendar.model';
 
 @Component({
   selector: 'app-calendar',
@@ -11,39 +13,29 @@ import { EventDetailsDialogComponent } from './event-details-dialog/event-detail
 })
 export class CalendarComponent implements OnInit {
   currentEvents: EventApi[] = [];
-  communitiesOption = [
-    { name: 'COR', value: 'cor' },
-    { name: 'COS', value: 'cos' },
-    { name: 'GRO', value: 'gro' },
-    { name: 'EUCO', value: 'euco' },
-    { name: 'EXTERNAL', value: 'external' },
-  ];
+  
   eventGuid = 0;
   filtersForm: FormGroup;
 
+  @ViewChild('calendar')
+  fullCalendar!: FullCalendarComponent;
+
   constructor(
     public dialog: MatDialog,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    public service: CalendarService
   ) {
 
-    /* this.formBuilder.group({
-      acceptTerms: [false, Validators.requiredTrue]
-    }); */
-
     this.filtersForm = this.fb.group({
-      communities: this.fb.group({
-        cor: [true],
-        cos: [true],
-        gro: [true],
-        euco: [true],
-        external: [true]
-      })
+      communities: this.fb.array([])
     });
+
+    this.service.communityOptions.forEach(() => (this.filtersForm.controls.communities as FormArray).push(new FormControl(false)));
   }
 
   ngOnInit(): void {
-    this.filtersForm.valueChanges.subscribe(values => {
-      console.log(values.communities);
+    this.filtersForm.valueChanges.subscribe((value: CalendarFilters) => {
+      this.fullCalendar.getApi().refetchEvents();
     });
   }
 
@@ -68,7 +60,13 @@ export class CalendarComponent implements OnInit {
     },
     initialView: 'dayGridMonth',
     // initialEvents: '../assets/json/events.json',
-    events: '../assets/json/events.json',
+    // events: '../assets/json/events.json',
+    // events: eventsJson,
+    events: (info, successCallback, failureCallback) => {
+      successCallback(
+        this.service.getEvents(this.filtersForm.value)
+      )
+    },
     firstDay: 1, /* sets Monday as 1st day of the week */
     weekends: true,
     editable: true,
@@ -77,7 +75,7 @@ export class CalendarComponent implements OnInit {
     dayMaxEvents: true, /* adds more events tooltip */
     select: this.handleDateSelect.bind(this),
     eventClick: this.handleEventClick.bind(this),
-    eventsSet: this.handleEvents.bind(this),
+    eventsSet: this.handleEvents.bind(this)
   };
 
   handleDateSelect(selectInfo: DateSelectArg) {
