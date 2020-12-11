@@ -30,7 +30,7 @@ export class CalendarComponent implements OnInit {
       communities: this.fb.array([])
     });
 
-    this.service.communityOptions.forEach(() => (this.filtersForm.controls.communities as FormArray).push(new FormControl(false)));
+    this.service.communityOptions.forEach(() => (this.filtersForm.controls.communities as FormArray).push(new FormControl(true)));
   }
 
   ngOnInit(): void {
