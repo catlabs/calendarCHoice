@@ -118,4 +118,8 @@ export class CalendarComponent implements OnInit {
   createEventId() {
     return String(this.eventGuid++);
   }
+
+  openChanged(isOpen: boolean){
+    this.fullCalendar.getApi().refetchEvents();
+  }
 }

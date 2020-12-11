@@ -1,12 +1,11 @@
 <div class="calendar-container">
   <mat-drawer-container>
-    <mat-drawer #drawer mode="side" [opened]="true">
+    <mat-drawer #drawer mode="side" [opened]="true" (openedChange)="openChanged($event)">
       <div class="calendar-container__drawer">
         <ng-container *ngIf="drawer.opened; else closed">
           <button mat-flat-button (click)="drawer.toggle()">Hide Menu</button>
           <form [formGroup]="filtersForm">
             <label class="mat-h2">Communities list</label>
-            <!-- <ul formGroupName="communities"> -->
             <ul formArrayName="communities">
               <li *ngFor="let option of service.communityOptions; let i=index">
                 <mat-checkbox [formControlName]="i">
