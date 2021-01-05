@@ -37,7 +37,7 @@
                   </mat-expansion-panel-header>
                   <mat-list>
                     <ng-template ngFor let-option [ngForOf]="service.communityOptions" let-i="index">
-                      <mat-list-item *ngIf="option.value !== 'EXTERNAL'">
+                      <mat-list-item *ngIf="option.type !== 'external'">
                         <mat-checkbox [formControlName]="i" class="{{ option.type }}" [matTooltip]="!drawer.opened ? option.name : ''">
                           <span *ngIf="drawer.opened">{{ option.name }}</span>
                         </mat-checkbox>
@@ -55,7 +55,7 @@
                   </mat-expansion-panel-header>
                   <mat-list>
                     <ng-template ngFor let-option [ngForOf]="service.communityOptions" let-i="index">
-                      <mat-list-item *ngIf="option.value === 'EXTERNAL'">
+                      <mat-list-item *ngIf="option.type === 'external'">
                         <mat-checkbox [formControlName]="i" class="{{ option.type }}" [matTooltip]="!drawer.opened ? option.name : ''">
                           <span *ngIf="drawer.opened">{{ option.name }}</span>
                         </mat-checkbox>

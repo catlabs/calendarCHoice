@@ -12,7 +12,8 @@ export class CalendarService {
     { name: 'Council', value: 'COS', type: 'cos' },
     { name: 'Coreper', value: 'COR', type: 'cor' },
     { name: 'Working Parties', value: 'GRO', type: 'gro' },
-    { name: 'European Institutions', value: 'EXTERNAL', type: 'external' }
+    { name: 'Eurogroup', value: 'EUROGROUP', type: 'external' },
+    { name: 'EP Plenary', value: 'EP', type: 'external' }
   ];
 
   events = new BehaviorSubject<any>([]);
