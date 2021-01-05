@@ -5,6 +5,8 @@ import { CalendarOptions, DateSelectArg, EventClickArg, EventApi, FullCalendarCo
 import { CalendarService } from './calendar.service';
 import { EventDetailsDialogComponent } from './event-details-dialog/event-details-dialog.component';
 import { CalendarFilters } from './calendar.model';
+import { faCalendarAlt as farCalendarAlt } from '@fortawesome/free-regular-svg-icons';
+import { faAddressBook, faCalendarAlt, faColumns, faComments, faHistory, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-calendar',
@@ -13,7 +15,14 @@ import { CalendarFilters } from './calendar.model';
 })
 export class CalendarComponent implements OnInit {
   currentEvents: EventApi[] = [];
-  
+  faAddressBook = faAddressBook;
+  faCalendarAlt = faCalendarAlt;
+  faColumns = faColumns;
+  faCommentAlt = faComments;
+  faHistory = faHistory;
+  faUsers = faUsers;
+  farCalendarAlt = farCalendarAlt;
+
   eventGuid = 0;
   filtersForm: FormGroup;
 
@@ -41,6 +50,7 @@ export class CalendarComponent implements OnInit {
 
   calendarOptions: CalendarOptions = {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+    contentHeight: 700,
     headerToolbar: {
       left: 'prev,next', /* prev,next today */
       center: 'title',

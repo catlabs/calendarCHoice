@@ -1,29 +1,100 @@
 <div class="calendar-container">
-  <mat-drawer-container>
-    <mat-drawer #drawer mode="side" [opened]="true" (openedChange)="openChanged($event)">
-      <div class="calendar-container__drawer">
-        <ng-container *ngIf="drawer.opened; else closed">
-          <button mat-flat-button (click)="drawer.toggle()">Hide Menu</button>
-          <form [formGroup]="filtersForm">
-            <label class="mat-h2">Communities list</label>
-            <ul formArrayName="communities">
-              <li *ngFor="let option of service.communityOptions; let i=index">
-                <mat-checkbox [formControlName]="i">
-                  {{ option.name }}
-                </mat-checkbox>
-              </li>
-            </ul>
-          </form>
-        </ng-container>
-        <ng-template #closed>
-          <button mat-icon-button (click)="drawer.toggle()" aria-label="">
-            <mat-icon>keyboard_arrow_right</mat-icon>
-          </button>
-        </ng-template>
-      </div>
-    </mat-drawer>
-    <mat-drawer-content [ngClass]="{'mat-drawer-content--closed': !drawer.opened}">
-      <full-calendar #calendar [options]="calendarOptions"></full-calendar>
-    </mat-drawer-content>
-  </mat-drawer-container>
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <fa-icon [icon]="faCalendarAlt" matTooltip="Calendar"></fa-icon>
+      </ng-template>
+      <mat-drawer-container>
+        <mat-drawer #drawer mode="side" [opened]="true" (openedChange)="openChanged($event)">
+          <div class="calendar-container__drawer">
+            <ng-container *ngIf="drawer.opened; else closed">
+              <button mat-flat-button (click)="drawer.toggle()">Hide menu</button>
+              <!-- <form [formGroup]="filtersForm">
+                <label class="mat-h2">Communities list</label>
+                <ul formArrayName="communities">
+                  <li *ngFor="let option of service.communityOptions; let i=index">
+                    <mat-checkbox [formControlName]="i">
+                      {{ option.name }}
+                    </mat-checkbox>
+                  </li>
+                </ul>
+              </form> -->
+            </ng-container>
+            <ng-template #closed>
+              <button mat-icon-button (click)="drawer.toggle()" aria-label="">
+                <mat-icon matTooltip="Show menu">keyboard_arrow_right</mat-icon>
+              </button>
+            </ng-template>
+            <mat-divider></mat-divider>
+            <form [formGroup]="filtersForm" [ngClass]="{'filters': !drawer.opened}">
+              <mat-accordion formArrayName="communities" multi="true">
+                <mat-expansion-panel expanded [hideToggle]="drawer.opened ? false : true">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <h2 *ngIf="drawer.opened">Communities</h2>
+                      <fa-icon *ngIf="!drawer.opened" [icon]="faUsers" matTooltip="Communities"></fa-icon>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-list>
+                    <ng-template ngFor let-option [ngForOf]="service.communityOptions" let-i="index">
+                      <mat-list-item *ngIf="option.value !== 'EXTERNAL'">
+                        <mat-checkbox [formControlName]="i" class="{{ option.type }}" [matTooltip]="!drawer.opened ? option.name : ''">
+                          <span *ngIf="drawer.opened">{{ option.name }}</span>
+                        </mat-checkbox>
+                      </mat-list-item>
+                    </ng-template>
+                  </mat-list>
+                </mat-expansion-panel>
+                <mat-divider></mat-divider>
+                <mat-expansion-panel expanded [hideToggle]="drawer.opened ? false : true">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      <h2 *ngIf="drawer.opened">External calendars</h2>
+                      <fa-icon *ngIf="!drawer.opened" [icon]="farCalendarAlt" matTooltip="External calendars"></fa-icon>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  <mat-list>
+                    <ng-template ngFor let-option [ngForOf]="service.communityOptions" let-i="index">
+                      <mat-list-item *ngIf="option.value === 'EXTERNAL'">
+                        <mat-checkbox [formControlName]="i" class="{{ option.type }}" [matTooltip]="!drawer.opened ? option.name : ''">
+                          <span *ngIf="drawer.opened">{{ option.name }}</span>
+                        </mat-checkbox>
+                      </mat-list-item>
+                    </ng-template>
+                  </mat-list>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </form>
+          </div>
+        </mat-drawer>
+        <mat-drawer-content [ngClass]="{'mat-drawer-content--closed': !drawer.opened}">
+          <full-calendar #calendar [options]="calendarOptions"></full-calendar>
+        </mat-drawer-content>
+      </mat-drawer-container>
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <fa-icon [icon]="faColumns" matTooltip="Kanban board"></fa-icon>
+      </ng-template>
+      Kanban board content
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <fa-icon [icon]="faCommentAlt" matTooltip="Comments"></fa-icon>
+      </ng-template>
+      Comments content
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <fa-icon [icon]="faHistory" matTooltip="History"></fa-icon>
+      </ng-template>
+      History content
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <fa-icon [icon]="faAddressBook" matTooltip="Team/address book"></fa-icon>
+      </ng-template>
+      Team/address book content
+    </mat-tab>
+  </mat-tab-group>
 </div>

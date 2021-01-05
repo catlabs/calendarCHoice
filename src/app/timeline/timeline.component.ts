@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/angular';
+import { CalendarOptions, EventInput } from '@fullcalendar/angular';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { events as eventsJson } from './../../assets/json/events.json';
 
 @Component({
   selector: 'app-timeline',
@@ -7,6 +9,16 @@ import { CalendarOptions } from '@fullcalendar/angular';
   styleUrls: ['./timeline.component.scss']
 })
 export class TimelineComponent implements OnInit {
+  events = new BehaviorSubject<any>([]);
+  events$: Observable<any>;
+
+  constructor() {
+    this.events$ = this.events.asObservable();
+  }
+
+  ngOnInit(): void {
+  }
+
   calendarOptions: CalendarOptions = {
     schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
     initialView: 'resourceTimelineWeek',
@@ -28,12 +40,15 @@ export class TimelineComponent implements OnInit {
       hour12: false
     },
     resources: '../assets/json/resources.json',
-    events: '../assets/json/events.json'
+    events: (info, successCallback, failureCallback) => {
+      successCallback(
+        this.getEvents()
+      )
+    }
   };
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getEvents(): EventInput[] {
+    this.events.next(eventsJson);
+    return this.events.value;
   }
-
 }

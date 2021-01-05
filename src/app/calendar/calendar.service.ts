@@ -8,11 +8,11 @@ import { CalendarEvent, CalendarFilters } from './calendar.model';
 })
 export class CalendarService {
   communityOptions = [
-    { name: 'COR', value: 'COR' },
-    { name: 'COS', value: 'COS' },
-    { name: 'GRO', value: 'GRO' },
-    { name: 'EUCO', value: 'EUCO' },
-    { name: 'EXTERNAL', value: 'EXTERNAL' },
+    { name: 'European Council', value: 'EUCO', type: 'euco' },
+    { name: 'Council', value: 'COS', type: 'cos' },
+    { name: 'Coreper', value: 'COR', type: 'cor' },
+    { name: 'Working Parties', value: 'GRO', type: 'gro' },
+    { name: 'European Institutions', value: 'EXTERNAL', type: 'external' }
   ];
 
   events = new BehaviorSubject<any>([]);

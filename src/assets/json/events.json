@@ -4,7 +4,7 @@
       "id": "00",
       "resourceId": "JL501",
       "title": "AGRIFISH - Agriculture & Fisheries",
-      "start": "2020-12-02",
+      "start": "2021-01-06",
       "classNames": [
         "cos"
       ],
@@ -16,7 +16,7 @@
       "id": "01",
       "resourceId": "JL502",
       "title": "JHA - Justice & Home Affairs",
-      "start": "2020-12-07",
+      "start": "2021-01-11",
       "classNames": [
         "cos"
       ],
@@ -28,7 +28,7 @@
       "id": "02",
       "resourceId": "JL501",
       "title": "FAC - Foreign Affairs",
-      "start": "2020-12-14",
+      "start": "2021-01-18",
       "classNames": [
         "cos"
       ],
@@ -40,8 +40,8 @@
       "id": "03",
       "resourceId": "EBS1",
       "title": "Coreper 1",
-      "start": "2020-12-02T09:00:00",
-      "end": "2020-12-02T13:00:00",
+      "start": "2021-01-06T09:00:00",
+      "end": "2021-01-06T13:00:00",
       "classNames": [
         "cor"
       ],
@@ -53,8 +53,8 @@
       "id": "04",
       "resourceId": "EBS1",
       "title": "Coreper 1",
-      "start": "2020-12-04T09:00:00",
-      "end": "2020-12-04T13:00:00",
+      "start": "2021-01-08T09:00:00",
+      "end": "2021-01-08T13:00:00",
       "classNames": [
         "cor"
       ],
@@ -66,8 +66,8 @@
       "id": "05",
       "resourceId": "EBS1",
       "title": "Coreper 1",
-      "start": "2020-12-09T09:00:00",
-      "end": "2020-12-09T13:00:00",
+      "start": "2021-01-13T09:00:00",
+      "end": "2021-01-13T13:00:00",
       "classNames": [
         "cor"
       ],
@@ -79,8 +79,8 @@
       "id": "06",
       "resourceId": "EBS1",
       "title": "Coreper 1",
-      "start": "2020-12-16T09:00:00",
-      "end": "2020-12-16T13:00:00",
+      "start": "2021-01-20T09:00:00",
+      "end": "2021-01-20T13:00:00",
       "classNames": [
         "cor"
       ],
@@ -92,8 +92,8 @@
       "id": "07",
       "resourceId": "EBS1",
       "title": "Coreper 1",
-      "start": "2020-12-18T09:00:00",
-      "end": "2020-12-18T13:00:00",
+      "start": "2021-01-22T09:00:00",
+      "end": "2021-01-22T13:00:00",
       "classNames": [
         "cor"
       ],
@@ -105,8 +105,8 @@
       "id": "08",
       "resourceId": "JL502",
       "title": "Coreper 2",
-      "start": "2020-12-02T09:30:00",
-      "end": "2020-12-02T13:30:00",
+      "start": "2021-01-06T09:30:00",
+      "end": "2021-01-06T13:30:00",
       "classNames": [
         "cor"
       ],
@@ -118,8 +118,8 @@
       "id": "09",
       "resourceId": "JL502",
       "title": "Coreper 2",
-      "start": "2020-12-04T09:30:00",
-      "end": "2020-12-04T13:30:00",
+      "start": "2021-01-08T09:30:00",
+      "end": "2021-01-08T13:30:00",
       "classNames": [
         "cor"
       ],
@@ -131,8 +131,8 @@
       "id": "10",
       "resourceId": "JL502",
       "title": "Coreper 2",
-      "start": "2020-12-09T09:30:00",
-      "end": "2020-12-09T13:30:00",
+      "start": "2021-01-13T09:30:00",
+      "end": "2021-01-13T13:30:00",
       "classNames": [
         "cor"
       ],
@@ -144,8 +144,8 @@
       "id": "11",
       "resourceId": "JL502",
       "title": "Coreper 2",
-      "start": "2020-12-16T09:30:00",
-      "end": "2020-12-16T13:30:00",
+      "start": "2021-01-20T09:30:00",
+      "end": "2021-01-20T13:30:00",
       "classNames": [
         "cor"
       ],
@@ -157,8 +157,8 @@
       "id": "12",
       "resourceId": "JL502",
       "title": "Coreper 2",
-      "start": "2020-12-18T09:30:00",
-      "end": "2020-12-18T13:30:00",
+      "start": "2021-01-22T09:30:00",
+      "end": "2021-01-22T13:30:00",
       "classNames": [
         "cor"
       ],
@@ -170,8 +170,8 @@
       "id": "13",
       "resourceId": "JL201",
       "title": "Political and Security Committee",
-      "start": "2020-12-03T14:00:00",
-      "end": "2020-12-03T18:00:00",
+      "start": "2021-01-07T14:00:00",
+      "end": "2021-01-07T18:00:00",
       "classNames": [
         "gro"
       ],
@@ -183,8 +183,8 @@
       "id": "14",
       "resourceId": "JL201",
       "title": "Political and Security Committee",
-      "start": "2020-12-15T14:00:00",
-      "end": "2020-12-15T18:00:00",
+      "start": "2021-01-19T14:00:00",
+      "end": "2021-01-19T18:00:00",
       "classNames": [
         "gro"
       ],
@@ -196,8 +196,8 @@
       "id": "15",
       "resourceId": "JL202",
       "title": "Financial Services Committee",
-      "start": "2020-12-08T09:00:00",
-      "end": "2020-12-09T113:00:00",
+      "start": "2021-01-12T09:00:00",
+      "end": "2021-01-12T13:00:00",
       "classNames": [
         "gro"
       ],
@@ -209,8 +209,8 @@
       "id": "16",
       "resourceId": "EBS7",
       "title": "European Council",
-      "start": "2020-12-10",
-      "end": "2020-12-12",
+      "start": "2021-01-14",
+      "end": "2021-01-16",
       "classNames": [
         "euco"
       ],
@@ -222,8 +222,8 @@
       "id": "17",
       "resourceId": "EBS7",
       "title": "European Council",
-      "start": "2020-12-21",
-      "end": "2020-12-23",
+      "start": "2021-01-28",
+      "end": "2021-01-30",
       "classNames": [
         "euco"
       ],
@@ -235,7 +235,7 @@
       "id": "18",
       "resourceId": "OTHER",
       "title": "Eurogroup",
-      "start": "2020-12-02",
+      "start": "2021-01-06",
       "classNames": [
         "external"
       ],
@@ -247,7 +247,7 @@
       "id": "19",
       "resourceId": "OTHER",
       "title": "EP Plenary (Strasbourg)",
-      "start": "2020-12-17",
+      "start": "2021-01-21",
       "classNames": [
         "external"
       ],
